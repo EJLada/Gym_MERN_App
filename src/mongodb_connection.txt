@@ -1,0 +1,17 @@
+NOTE: if using mongodb and not mongoose...
+
+const { MongoClient } = require('mongodb');
+const uri = "mongodb+srv://jszvkczf:5f9f1d81-8ba2-4d47-bc20-f1534a3a8950@exercise-logger.sbrrg.mongodb.net/exercises?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
+public key: "jszvkczf"
+private key: "5f9f1d81-8ba2-4d47-bc20-f1534a3a8950"
+
+owner_id: "ejlada"
+owner_password: "5!@MLatFYxx3"
+url_encoded_password: "5!%40MLatFYxx3"

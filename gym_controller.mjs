@@ -43,7 +43,7 @@ app.get('/exercises/:_id', (req, res) => {
 
 // Retrieve all exercises via GET route
 app.get('/exercises', (req, res) => {
-    exercises.findExercises({}, '', 0)
+    exercises.retrieveExercises({}, '', 0)
         .then(exercises => {
             res.status(200).json(exercises)
         })
@@ -72,10 +72,10 @@ app.put('/exercises/:_id', (req, res) => {
 
 // Delete an exercise by `_id`
 app.delete('/exercises/:_id', (req, res) => {
-    exercises.deleteById(req.params._id)
-        .then(deletedCount => {
-            if (deletedCount === 1) {
-                res.status(204).send();
+    exercises.deleteExercises({_id: req.params._id})
+        .then(result => {
+            if (result.deletedCount === 1) {
+                res.status(204).json(result);
             }
             else {
                 res.status(404).json({Error: 'Resource not found'});

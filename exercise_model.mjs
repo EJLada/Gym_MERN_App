@@ -32,7 +32,7 @@ const Exercise = mongoose.model('Exercise', exerciseSchema);
  * @param {String} date - format: 'MM-DD-YY'
  * @returns {Promise<*>} - resolves to the Exercise object created by `save()`.
  */
-async function createExercise(name, reps, weight, unit, date) {
+const createExercise = async (name, reps, weight, unit, date) => {
     const exercise = {name: name, reps: reps, weight: weight, unit: unit, date: date};
     return await Exercise.create(exercise);
 }
@@ -58,7 +58,7 @@ const retrieveExercises = async (filter, projection, limit) => {
  * @returns {Promise<*>} resolves to an object containing `updatedCount` or an error.
  */
 const updateExercise = async (_id, updateData) => {
-    return User.findOneAndUpdate({_id: _id}, updateData);
+    return Exercise.findOneAndUpdate({_id: _id}, updateData, {returnDocument: 'after'});
 }
 
 /**
@@ -68,7 +68,7 @@ const updateExercise = async (_id, updateData) => {
  * @returns {Promise<*>} resolves to an object containing `deletedCount`.
  */
 const deleteExercises = async (query) => {
-    return User.deleteMany(query);
+    return Exercise.deleteMany(query);
 }
 
 export {createExercise, retrieveExercises, updateExercise, deleteExercises};

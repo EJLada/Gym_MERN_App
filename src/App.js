@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState} from "react";
+import {Route} from 'react-router-dom';
+import Home from "./pages/Home";
+import CreateExercise from "./pages/CreateExercise";
+import EditExercise from "./pages/EditExercise";
 
 function App() {
+  const [exerciseToEdit, setExerciseToEdit] = useState([]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+          <Route path='/edit'>
+            <EditExercise exerciseToEdit={exerciseToEdit} />
+          </Route>
+          <Route path='/create'>
+            <CreateExercise />
+          </Route>
+          <Route path='/' exact>
+            <Home setExerciseToEdit={setExerciseToEdit} />
+          </Route>
     </div>
   );
 }

@@ -4,7 +4,7 @@ import Exercise from "./Exercise";
 
 export default function ExerciseTable({exercises, onDelete, onEdit}) {
     return (
-        <table className='exercise-table'>
+        <table className='exercise_table'>
             <caption>Logged Exercises</caption>
             <thead>
             <tr>

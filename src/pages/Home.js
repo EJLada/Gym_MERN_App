@@ -2,6 +2,7 @@ import '../App.css';
 import React, {useEffect, useState} from 'react';
 import {Link, useHistory} from "react-router-dom";
 import ExerciseTable from "../components/ExerciseTable";
+import Logo from "../images/Crunchforge.png";
 
 export default function Home({setExerciseToEdit}) {
     const history = useHistory();
@@ -35,12 +36,13 @@ export default function Home({setExerciseToEdit}) {
 
     return (
         <div className='home'>
-            <h2>Exercise Log</h2>
-            <ExerciseTable exercises={exercises}
-                           onDelete={onDelete}
-                           onEdit={onEdit}>
-            </ExerciseTable>
-            <Link to='/create'>Add New Exercise</Link>
+            <div className='home_body'>
+                <ExerciseTable exercises={exercises}
+                               onDelete={onDelete}
+                               onEdit={onEdit}>
+                </ExerciseTable>
+                <Link to='/create'><button>Add New Exercise</button></Link>
+            </div>
         </div>
     );
 }

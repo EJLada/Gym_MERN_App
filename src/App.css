@@ -1,38 +1,129 @@
-.App {
-  text-align: center;
-}
+/*
+Color scheme:
+Light / white:  #f5f4f6
+Light blue pop: #72c1ce
+Main brick red: #c94a49
+Sand highlight: #d59c63
+Dark grey bg:   #54595f
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+Placed in <head> of 'index.html':
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Patua+One&family=Titillium+Web&display=swap" rel="stylesheet">
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+font-family: 'Bebas Neue', cursive;           Main Title
+font-family: 'Patua One', cursive;            Headers
+font-family: 'Titillium Web', sans-serif;     body text
+ */
 
-.App-header {
-  background-color: #282c34;
+body {
+  background-color: #54595F;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: 'Titillium Web', sans-serif;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #f5f4f6;
 }
 
-.App-link {
-  color: #61dafb;
+.App {
+  text-align: center;
+  padding-bottom: 5%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.home_header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#main_logo {
+  width: 50%;
+  height: 50%;
+}
+
+.home_body {
+  background-color: #f5f4f6;
+  border-radius: 2%;
+  color: #54595F;
+  justify-content: center;
+  padding: 2% 0 2% 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: #d59c63;
+  border-radius: 2%;
+  color: #54595F;
+  width: 95%;
+  margin: auto;
+  align-items: center;
+  padding: 2% 0 2% 0;
+}
+
+.form_field {
+  width: 75%;
+  justify-content: left;
+}
+
+label {
+  width: 100%;
+}
+
+input, select {
+  margin: 1% 2% 1% 2%;
+  padding: 1%;
+  background-color: #f5f4f6;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: calc(10px + 1vmin);
+}
+
+input[type=text], input[type=number] {
+  width: 80%;
+}
+
+#weight {
+  width: 50%;
+}
+
+table {
+  margin: auto;
+  width: 95%;
+}
+
+caption {
+  color: #54595F;
+}
+
+thead {
+  color: #c94a49;
+  border-bottom: 3px solid #c94a49;
+}
+
+td {
+  padding: 0 1% 0 1%;
+}
+
+h1 {
+  font-family: 'Bebas Neue', cursive;
+  color: #c94a49;
+}
+
+h2 {
+  font-family: 'Patua One', cursive;
+}
+
+h3 {
+  font-family: 'Patua One', cursive;
+}
+
+button {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: calc(10px + 2vmin);
+  margin: 2% 0 2% 0;
+  color: #c94a49;
 }

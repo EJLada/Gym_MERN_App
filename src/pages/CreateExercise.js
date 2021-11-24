@@ -32,57 +32,65 @@ export default function CreateExercise() {
     return (
         <form className='addForm'>
             <h2>Add Exercise</h2>
-            <label>Name:
-                <input
-                    type='text'
-                    id='name'
-                    name='name'
-                    value={name}
-                    onChange={e => setName(e.target.value)}
-                    required/>
-            </label>
-            <label>Reps:
-                <input
-                    type='number'
-                    id='reps'
-                    name='reps'
-                    min='0'
-                    value={reps}
-                    onChange={e => setReps(e.target.value)}
-                    required/>
-            </label>
-            <label>Weight:
-                <input
-                    type='number'
-                    id='weight'
-                    name='weight'
-                    min='0'
-                    value={weight}
-                    onChange={e => setWeight(e.target.value)}
-                    required/>
-            </label>
-            <label>Units:
-                <select
-                    id='unit'
-                    name='unit'
-                    value={unit}
-                    onChange={e => setUnit(e.target.value)}
-                    required>
-                    <option value='lbs'>LBs</option>
-                    <option value='kgs'>KGs</option>
-                </select>
-            </label>
-            <label>Date:
-                <input
-                    type='text'
-                    id='date'
-                    name='date'
-                    value={date}
-                    onChange={e => setDate(e.target.value)}
-                    title='MM-DD-YY'
-                    pattern='^((\d{2})-(\d{2})-(\d{2}))'
-                    required/>
-            </label>
+            <div className='form_field'>
+                <label>Name:
+                    <input
+                        type='text'
+                        id='name'
+                        name='name'
+                        value={name}
+                        onChange={e => setName(e.target.value)}
+                        required/>
+                </label>
+            </div>
+            <div className='form_field'>
+                <label>Reps:
+                    <input
+                        type='number'
+                        id='reps'
+                        name='reps'
+                        min='0'
+                        value={reps}
+                        onChange={e => setReps(e.target.value)}
+                        required/>
+                </label>
+            </div>
+            <div className='form_field'>
+                <label>Weight:
+                    <input
+                        type='number'
+                        id='weight'
+                        name='weight'
+                        min='0'
+                        value={weight}
+                        onChange={e => setWeight(e.target.value)}
+                        required/>
+                </label>
+                <label>Units:
+                    <select
+                        id='unit'
+                        name='unit'
+                        value={unit}
+                        onChange={e => setUnit(e.target.value)}
+                        required>
+                        <option value='lbs'>LBs</option>
+                        <option value='kgs'>KGs</option>
+                    </select>
+                </label>
+            </div>
+            <div className='form_field'>
+                <label>Date:
+                    <input
+                        type='text'
+                        id='date'
+                        name='date'
+                        value={date}
+                        onChange={e => setDate(e.target.value)}
+                        title='MM-DD-YY'
+                        pattern='^((\d{2})-(\d{2})-(\d{2}))'
+                        required/>
+                </label>
+            </div>
             <button type='button' value='CREATE' onClick={addExercise}>CREATE</button>
         </form>
     );
